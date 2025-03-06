@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    
+    int select_arr[5] = {40, 10, 20, 100, 70};
+    int min_pivot = 0;
+    int temp = 0;
+    int min = 0;
+    
+    for (int i = 0; i < 4; i++) {
+        min = select_arr[i];
+        
+        for (int j = i + 1; j < 5; j++) {
+            if (min > select_arr[j]) {
+                min = select_arr[j];
+                min_pivot = j;
+                temp = select_arr[i];
+                select_arr[i] = select_arr[min_pivot];
+                select_arr[min_pivot] = temp;
+            }
+
+        }
+    }
+    
+    for (int i = 0; i < 5; i++) {
+        printf("%d\t", select_arr[i]);
+    }
+    return 0;
+}
