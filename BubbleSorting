@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+//Bubble Sorting
+int main() {
+
+    int bubbleArr[5] = {12, 24, 3, 82, 19};
+    int temp = 0;
+    for (int i = 0; i < 4; i++) {
+        for (int j = i + 1; j < 5; j++) {
+            if (bubbleArr[i] > bubbleArr[j]) {
+                temp = bubbleArr[i];
+                bubbleArr[i] = bubbleArr[j];
+                bubbleArr[j] = temp;
+            }
+        }
+    }
+
+    for (int i = 0; i < 5; i++) {
+        printf("%d\t", bubbleArr[i]);
+    }
+    return 0;
+}
